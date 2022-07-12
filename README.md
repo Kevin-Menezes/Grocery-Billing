@@ -1,5 +1,5 @@
 # 🧾Grocery-Billing
-A static java awt app that generates a bill for grocery items🧾
+A static java applet that generates a bill for grocery items🧾
 
 <br/>
 <hr>
@@ -24,13 +24,14 @@ https://drive.google.com/file/d/1QHC7g1_SLSSR6JwlRZl1qZka5aNZJ7v3/view?usp=shari
 #
 
 ### Q. What technologies are used to build this app?
-- Frontend - Java AWT
+- Frontend - Java Applet
 - Backend - Java
 #
 
 ### Q. What features does this app have?
 - Simple UI.
 - Generates a bill on the command line.
+
 <br/>
 <hr>
 
@@ -39,7 +40,7 @@ https://drive.google.com/file/d/1QHC7g1_SLSSR6JwlRZl1qZka5aNZJ7v3/view?usp=shari
 - Download the project files on your PC/Laptop.
 - Go to the folder where you saved the files and open cmd there.
 - Type "javac GroceryBilling.java". Then press Enter.
-- Then type "appletviewer GroceryBilling.java".
+- Then type "appletviewer GroceryBilling.java". Press Enter.
 - Now you can follow the video and navigate through the project.
 
 <br/>

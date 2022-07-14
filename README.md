@@ -6,7 +6,7 @@ A static java applet that generates a bill for grocery items🧾
 
 # ▶Project video
 This video will show you the working of the app and will guide you on how to use it.
-https://drive.google.com/file/d/1QHC7g1_SLSSR6JwlRZl1qZka5aNZJ7v3/view?usp=sharing
+
 
 <img alt="Grocery Interface" src="https://github.com/Kevin-Menezes/Grocery-Billing/blob/main/GroceryInterface.PNG">
 

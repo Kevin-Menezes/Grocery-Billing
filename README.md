@@ -24,6 +24,7 @@ https://drive.google.com/file/d/1wLGDro2Ua6RUQSktQ7oAghwYDDsVYLnJ/view?usp=shari
 - Users can select the items they want to buy and get the bill on their own.
 - Admins can modify the cost, availability, quantity and discount of the products.
 - Admins can also see the cost price, profit and commission of the items.
+- Admins can check their day to day total profit and commission.
 #
 
 ### Q. What technologies are used to build this app?

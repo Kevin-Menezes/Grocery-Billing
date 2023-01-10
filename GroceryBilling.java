@@ -4,7 +4,7 @@ import java.applet.*;
 
 public class GroceryBilling extends Applet implements ActionListener 
 {
-	
+	// Variables
 	float quant,sum,rate1=150,rate2=40,rate3=140,rate4=60,stock1=30,stock2=20,stock3=20,stock4=30,bill1=0,bill2=0,bill3=0,bill4=0,d1=0,d2=0,d3=0,d4=0;
 	float dbill1=0,dbill2=0,dbill3=0,dbill4=0,dsum,c1=0,c2=0,c3=0,c4=0,csum;
 	float cp1=100,cp2=25,cp3=100,cp4=30,profit1=0,profit2=0,profit3=0,profit4=0,psum,dayprofit=0,daycommission=0;
@@ -47,7 +47,7 @@ public class GroceryBilling extends Applet implements ActionListener
 		
 	TextField p = new TextField();
 	
-	TextField rt1 = new TextField("150",5);
+	TextField rt1 = new TextField("150",5); // (value,length)
 	TextField rt2 = new TextField("40",5);
 	TextField rt3 = new TextField("140",5);
 	TextField rt4 = new TextField("60",5);
@@ -148,7 +148,7 @@ public class GroceryBilling extends Applet implements ActionListener
 		
 		// ---GROCERY BILL----
 		add(gb);
-		gb.setBounds(9,29,1583,90);
+		gb.setBounds(9,29,1583,90); //(x,y,l,b)
 		gb.setBackground(steelblue);
 		gb.setFont(font1);
 		
@@ -569,6 +569,7 @@ public class GroceryBilling extends Applet implements ActionListener
 		
 		
 		// ADMIN MODE-------------------------------------------------------------------------------------------
+        // Update
 		if(ae.getSource() == upda)
 		{
 			msg1.setText("");
@@ -775,34 +776,47 @@ public class GroceryBilling extends Applet implements ActionListener
 			msg2.setText("");
 			msg3.setText("");
 			msg4.setText("");
+            
+            // If bill is >0 then only print it
+            if(finalsum!=0.0){
 			
-			System.out.println(" ");
-			System.out.println(" ");
-			System.out.println("                                KM STORES");
-			System.out.println("------------------------------------------------------------------------");
-			System.out.println(" ");
-			System.out.println(" ");
-			System.out.println("   ITEMS                QTY     RATE       DISCOUNT%     AMOUNT ");         
-			System.out.println(" ");
-			System.out.println(" BASMATI RICE           "+q1+"     "+rate1+"        "+d1+"          "+dbill1);
-			System.out.println(" ");
-			System.out.println("   SUGAR                "+q2+"     "+rate2+"         "+d2+"          "+dbill2);
-			System.out.println(" ");
-			System.out.println("  TOOR DAL              "+q3+"     "+rate3+"        "+d3+"          "+dbill3);
-			System.out.println(" ");
-			System.out.println("    AATA                "+q4+"     "+rate4+"         "+d4+"          "+dbill4);
-			System.out.println(" ");
-			System.out.println("               ---------------------------------------------------------");
-			System.out.println(" ");
-			System.out.println("                                    SUB TOTAL :     "+dsum);
-			System.out.println("                                    G.S.T @5% :     "+gst);
-			
-			System.out.println("               ---------------------------------------------------------");
-			System.out.println(" ");
-			System.out.println("                                  FINAL TOTAL :     "+finalsum);
-			System.out.println(" ");
-			System.out.println("------------------------------------------------------------------------");
-			System.out.println("                       THANK YOU!  VISIT AGAIN!");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println("                                KM STORES");
+                System.out.println("------------------------------------------------------------------------");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println("   ITEMS                QTY     RATE       DISCOUNT%     AMOUNT ");         
+                System.out.println(" ");
+                System.out.println(" BASMATI RICE           "+q1+"     "+rate1+"        "+d1+"          "+dbill1);
+                System.out.println(" ");
+                System.out.println("   SUGAR                "+q2+"     "+rate2+"         "+d2+"          "+dbill2);
+                System.out.println(" ");
+                System.out.println("  TOOR DAL              "+q3+"     "+rate3+"        "+d3+"          "+dbill3);
+                System.out.println(" ");
+                System.out.println("    AATA                "+q4+"     "+rate4+"         "+d4+"          "+dbill4);
+                System.out.println(" ");
+                System.out.println("               ---------------------------------------------------------");
+                System.out.println(" ");
+                System.out.println("                                    SUB TOTAL :     "+dsum);
+                System.out.println("                                    G.S.T @5% :     "+gst);
+                
+                System.out.println("               ---------------------------------------------------------");
+                System.out.println(" ");
+                System.out.println("                                  FINAL TOTAL :     "+finalsum);
+                System.out.println(" ");
+                System.out.println("------------------------------------------------------------------------");
+                System.out.println("                       THANK YOU!  VISIT AGAIN!");
+            } 
+            
+            // Resetting the bill, discount bill , profit and commission
+            bill1=0;bill2=0;bill3=0;bill4=0;
+            dbill1=0;dbill2=0;dbill3=0;dbill4=0;
+            c1=0;c2=0;c3=0;c4=0;
+            profit1=0;profit2=0;profit3=0;profit4=0;
+            
+
+            
 		}
 
 		
@@ -870,6 +884,13 @@ public class GroceryBilling extends Applet implements ActionListener
 			msg4.setText("");
 			
 			String s1 = t1.getText();      //taking the quantity of product from user
+            
+            if(s1.isEmpty())  //not allowing negative no.
+			{
+				msg.setText("PLEASE ENTER QUANTITY!");
+				
+			}
+            
 			quant = Float.parseFloat(s1);       //converting the string to Float
 			q1=quant;
 			
@@ -880,8 +901,7 @@ public class GroceryBilling extends Applet implements ActionListener
 				t1.setText("");
 				t2.setText("");
 				
-			}
-			
+			}			
 			else
 			{
 
@@ -954,6 +974,13 @@ public class GroceryBilling extends Applet implements ActionListener
 			msg4.setText("");
 			
 			String s2 = t3.getText();      //taking the quantity of product from user
+            
+            if(s2.isEmpty())  //not allowing negative no.
+			{
+				msg.setText("PLEASE ENTER QUANTITY!");
+				
+			}
+            
 			quant = Float.parseFloat(s2);       //converting the string to Float
 			q2=quant;
 			
@@ -1035,6 +1062,13 @@ public class GroceryBilling extends Applet implements ActionListener
 			msg4.setText("");
 			
 			String s3 = t5.getText();      //taking the quantity of product from user
+            
+            if(s3.isEmpty())  //not allowing negative no.
+			{
+				msg.setText("PLEASE ENTER QUANTITY!");
+				
+			}
+            
 			quant = Float.parseFloat(s3);       //converting the string to Float
 			q3=quant;
 			
@@ -1115,6 +1149,13 @@ public class GroceryBilling extends Applet implements ActionListener
 			msg4.setText("");
 			
 			String s4 = t7.getText();      //taking the quantity of product from user
+            
+            if(s4.isEmpty())  //not allowing negative no.
+			{
+				msg.setText("PLEASE ENTER QUANTITY!");
+				
+			}
+            
 			quant = Float.parseFloat(s4);       //converting the string to Float
 			q4=quant;
 			
